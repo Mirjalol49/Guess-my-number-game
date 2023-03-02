@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@500;600;700;800&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+
+/* GENERAL */
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    height: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Shantell Sans', "Arial", sans-serif;
+    background-color: #a578ff;
+}
+
+
+/* VISUALLY-HIDDEN */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+
+/* CONTAINER */
+
+.container {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+
+/* STICKY-FOOTER */
+
+.site-main {
+    flex-grow: 1;
+}
+
+.main-box {
+    text-align: center;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.found {
+    display: none;
+}
+
+.foundyes {
+    display: block;
+}
+
+.boxone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.desc {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 5s steps(2000, end) forwards;
+    font-size: 25px;
+    width: 0;
+    margin: 0;
+}
+
+.descs {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 5s steps(2000, end) forwards;
+    font-size: 25px;
+    animation-delay: 5s;
+    width: 0;
+    margin: 0;
+}
+
+.hello-img {
+    position: absolute;
+    right: 550px;
+    bottom: -150px;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.js-attemtps {
+    margin-top: 1000px;
+}
+
+.img-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imgbox-hide {
+    display: none;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.try {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.input-box {
+    display: flex;
+}
+
+.custom-input {
+    border: 3px solid #000;
+    border-radius: 5px;
+    height: 50px;
+    line-height: normal;
+    color: #282828;
+    display: block;
+    box-sizing: border-box;
+    user-select: auto;
+    font-size: 16px;
+    padding: 0 6px;
+    padding-left: 12px;
+}
+
+.custom-input:focus {
+    border: 3px solid #5551ff;
+    outline: none;
+}
+
+.input-btn {
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background: #000000;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 14px 24px 16px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    transition: transform 200ms, background 200ms;
+    margin-left: 15px;
+}
+
+.input-btn :hover {
+    transform: translateY(-2px);
+}
