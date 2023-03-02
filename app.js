@@ -7,7 +7,8 @@ let elResult = document.querySelector(".result")
 let foundImg = document.querySelector(".found")
 let box = document.querySelector(".boxone");
 let imgBox = document.querySelector(".imgbox-hide");
-
+let congrats = document.querySelector(".textfound")
+let refreshPage = document.querySelector(".refresh")
 
 //! GIVING ATTEMPTS TO A VARIABLE AND DISPLAYING INTO DOM
 let maxAttemptsCount = 5;
@@ -22,6 +23,8 @@ elAttempts.textContent = `You have ${maxAttemptsCount} attempts`;
 elForm.addEventListener("submit", function(evt) {
     evt.preventDefault();
 
+
+
     //! TRIMMING A SPACE AND GETTING A VALUE OF INPUT
     let inputValue = Number(elInput.value.trim());
     maxAttemptsCount--;
@@ -29,32 +32,56 @@ elForm.addEventListener("submit", function(evt) {
 
     //! LETS COMPARE YOUR ANSWER AND RANDOMNUMBER WITH IF ELSE
     if (inputValue > randomNumber) {
-        elResult.textContent = "nooo"
+        elResult.textContent = "it is too high"
+
+        elInput.value = "";
     } else if (inputValue < randomNumber) {
-        elResult.textContent = "noo"
+
+        elResult.textContent = "it is too low"
+
+        elInput.value = "";
     } else {
-        elResult.textContent = "yes"
+
         foundImg.classList.add("foundyes");
         box.classList.remove("boxone");
         box.classList.add("found")
         document.body.classList.add("bg-color")
         imgBox.classList.remove("imgbox-hide")
         imgBox.classList.add("img-box")
+        congrats.classList.remove("textfound")
+        congrats.classList.add("textfoundyes")
+        elBtn.remove()
+        refreshPage.classList.add("refreshpage")
+        elInput.disabled = true;
 
-
-
-
+        elResult.textContent = "";
     };
+
+
+
 
     if (maxAttemptsCount === 0 && inputValue === randomNumber) {
 
         elInput.disabled.true;
+        elBtn.disabled = true;
+        refreshPage.classList.remove("refresh")
+        refreshPage.classList.add("refreshpage")
+        elBtn.remove()
+        refreshPage.classList.add("refreshpage")
+        elResult.textContent = "";
     } else if (maxAttemptsCount === 0) {
         elInput.disabled = true;
+        elBtn.disabled = true;
+        refreshPage.classList.remove("refresh")
+        refreshPage.classList.add("refreshpage")
+        elBtn.remove()
+        refreshPage.classList.add("refreshpage")
+        elResult.textContent = "";
     }
 
-    elInput.value = "";
-
-
+    function refreshPagefunction() {
+        window.location.reload();
+    }
+    refreshPage.addEventListener("click", refreshPagefunction);
 
 })
