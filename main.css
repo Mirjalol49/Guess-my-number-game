@@ -118,6 +118,10 @@ body {
     user-select: none;
 }
 
+.descone {
+    margin: 0;
+}
+
 .descs {
     overflow: hidden;
     white-space: nowrap;
